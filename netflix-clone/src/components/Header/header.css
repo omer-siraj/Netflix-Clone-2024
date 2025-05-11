@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*backgroud-color: rgb(148, 132,132), */
+/* background-color: rgb(148, 132, 132); */
     background-color: rgb(20, 20, 20);
     /* background-color: transparent; */
     height: 10vh; 
@@ -14,6 +14,7 @@
     z-index: 1;
     /* background-color: red;  */
 }
+
 
 .nav_black {
     background-color: rgb(20, 20, 20);
@@ -33,3 +34,17 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.header_nav_links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-left: 20px;
+  }
+  
+  .header_icons {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+  }
+  
