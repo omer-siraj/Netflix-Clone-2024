@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../utils/axios';
 import requests from '../../utils/requests';
-import './banner.css'
+import './banner.css';
 
 const Banner = () => {
   const [movie, setMovie] = useState({});
@@ -11,9 +11,11 @@ const Banner = () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
         const results = request.data.results;
-        setMovie(results[Math.floor(Math.random() * results.length)]);
+        if (results.length > 0) {
+          setMovie(results[Math.floor(Math.random() * results.length)]);
+        }
       } catch (error) {
-        console.log('Error fetching banner movie:', error);
+        console.error('Error fetching banner movie:', error);
       }
     })();
   }, []);
@@ -27,7 +29,9 @@ const Banner = () => {
       className="banner"
       style={{
         backgroundSize: 'cover',
-        backgroundImage: `url('https://image.tmdb.org/t/p/original${movie?.backdrop_path}')`,
+        backgroundImage: movie?.backdrop_path
+          ? `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`
+          : 'none',
         backgroundPosition: 'center',
       }}
     >

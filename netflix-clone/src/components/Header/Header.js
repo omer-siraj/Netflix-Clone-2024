@@ -8,30 +8,31 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 const Header = () => {
   return (
-    <div className="header_outer_container">
+    <header className="header_outer_container">
       <div className="header_container">
         <div className="header_left">
           <img src={NetflixLogo} alt="Netflix Logo" width="100" />
+          <nav>
             <ul className="header_nav_links">
-                <li>Home</li>
-                <li>TV Shows</li>
-                <li>Movies</li>
-                <li>Latest</li>
-                <li>My List</li>
-                <li>Browse by Languages</li>
+              <li>Home</li>
+              <li>TV Shows</li>
+              <li>Movies</li>
+              <li>Latest</li>
+              <li>My List</li>
+              <li>Browse by Languages</li>
             </ul>
-
+          </nav>
         </div>
         <div className="header_right">
-            <ul className="header_icons">
-                <li><SearchIcon /></li>
-                <li><NotificationsNoneIcon /></li>
-                <li><AccountBoxIcon /></li>
-                <li><ArrowDropDownIcon /></li>
-            </ul>
+          <ul className="header_icons">
+            <li title="Search"><SearchIcon /></li>
+            <li title="Notifications"><NotificationsNoneIcon /></li>
+            <li title="Account"><AccountBoxIcon /></li>
+            <li title="More Options"><ArrowDropDownIcon /></li>
+          </ul>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
